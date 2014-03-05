@@ -8,16 +8,18 @@ from NZConfig import NZConfig
 from NZMessage import NZMessage
 from NZMessage import NZMsgType
 from NZStatus import NZStatus
+from NZSettings import NZSettings
+from NZSockets import NZSockets
 
 class NZAvatar(QLabel):
 	'''display default avatar for newbie'''
 	def __init__(self, parent=None):
 		super(NZAvatar, self).__init__(parent)
-		avatar = gQPixmap('./avatar.png')
+		avatar = QPixmap('./avatar.png')
 		avatar = avatar.scaled(64, 64)
 		self.setPixmap(avatar)
 
-class NZStatusBox(gQComboBox):
+class NZStatusBox(QComboBox):
 	def __init__(self, config, status = NZStatus.ONLINE, parent=None):
 		super(NZStatusBox, self).__init__(parent)
 		self.config = config
@@ -53,18 +55,18 @@ class NZHeaderPane(QFrame):
 	'''
 	def __init__(self, config, settings, nickname, parent=None):
 		super(NZHeaderPane, self).__init__(parent)
-		grid = gQGridLayout(self)
+		grid = QGridLayout(self)
 		self.setLayout(grid)
 		grid.addWidget(NZAvatar(self), 0, 0, 2, 2)
 		grid.addWidget(NZStatusBox(config, self), 0, 2, 1, 1)
 		grid.addWidget(settings.account.nickname, 1, 2, 1, 1)
 
-class NZFooterPane(gQWidget):
+class NZFooterPane(QWidget):
 	def __init__(self, parent=None):
 		super(NZFooterPane, self).__init__(parent)
 #		TODO
 
-class NZChat(gQWidget):
+class NZChat(QWidget):
 	def __init__(self, parent=None):
 		super(NZChat, self).__init__(parent)
 
@@ -76,11 +78,11 @@ class NZChat(gQWidget):
 		self.setWindowTitle(self.tr('NZChat'))
 		self.resize(270, 600)
 		# move to right top corner
-		self.move(gQApplication.desktop().width() - 400, 0)
+		self.move(QApplication.desktop().width() - 400, 0)
 
-		self.frame = gQFrame(self)
+		self.frame = QFrame(self)
 		vbox = QVBoxLayout(self.frame)
-		vbox.setAlignment(gQt.AlignCenter)
+		vbox.setAlignment(Qt.AlignCenter)
 		self.frame.setLayout(vbox)
 		self.setCentralWidget(self.frame)
 		vbox.addWidget(NZHeaderPane(self.config, self), stretch = 3)
