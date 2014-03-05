@@ -3,9 +3,9 @@
 from NZChat import NZChat
 from NZQt import *
 
-#QtCore.QTextCodec.setCodecForLocale(QtCore.QTextCodec.codecForName('utf8'))
-#QtCore.QTextCodec.setCodecForLocale(QtCore.QTextCodec.codecForName('utf8'))
-#QtCore.QTextCodec.setCodecForTr(QtCore.QTextCodec.codecForName('utf8'))
+QtCore.QTextCodec.setCodecForLocale(QtCore.QTextCodec.codecForName('utf8'))
+QtCore.QTextCodec.setCodecForLocale(QtCore.QTextCodec.codecForName('utf8'))
+QtCore.QTextCodec.setCodecForTr(QtCore.QTextCodec.codecForName('utf8'))
 
 if __name__ == '__main__':
 	import sys
