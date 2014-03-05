@@ -121,7 +121,7 @@ class NZChatWindow(QtGui.QMainWindow):
 	def __init__(self, config, parent=None):
 		super(NZChatWindow, self).__init__(parent)
 		self.config = config
-		self.setWindowTitle("聊天")
+		self.setWindowTitle(self.tr("聊天"))
 		self.resize(500, 500)
 		self.tabs = QtGui.QTabWidget(self)
 		self.setCentralWidget(self.tabs)
