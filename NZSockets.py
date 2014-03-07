@@ -1,0 +1,2 @@
+class NZSockets(QObject):
+	pass
