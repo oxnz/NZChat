@@ -20,3 +20,5 @@ TODO
 ----
 
 Fix File Transfer Module
+Add Unit Test
+Change Username to \u@\h
